@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
+import { DisplayCard } from "./components/DisplayCard";
 
 function App() {
   const [searchResult, setSearchResult] = useState("");
@@ -34,12 +35,19 @@ function App() {
 
   return (
     <div className="App">
+      <div className="red-container">
       <div className="search-bar-container">
         <SearchBar onEnter={handleSearch} />
         {searchResult && <h1>{searchResult}</h1>}
       </div>
+      <DisplayCard/>
+      </div>
     </div>
   );
 }
+
+
+
+
 
 export default App;
