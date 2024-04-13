@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
+import Game from "./components/Game";
 
 function App() {
   const [searchResult, setSearchResult] = useState("");
@@ -37,6 +38,7 @@ function App() {
       <div className="search-bar-container">
         <SearchBar onEnter={handleSearch} />
         {searchResult && <h1>{searchResult}</h1>}
+        <Game />
       </div>
     </div>
   );
