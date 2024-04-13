@@ -8,8 +8,8 @@ const Game = () => {
       title: "Scene 1",
       content: "You are at a crossroads. Do you go left or right?",
       choices: [
-        { content: "Go Left", nextScene: 1 },
-        { content: "Go Right", nextScene: 2 },
+        { content: "Go left", nextScene: 1 },
+        { content: "Go right", nextScene: 2 },
       ],
     },
     {
