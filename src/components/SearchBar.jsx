@@ -5,6 +5,7 @@ import "./SearchBar.css";
 
 export const SearchBar = ({ onEnter }) => {
   const [input, setInput] = useState("");
+  const [placeholder, setPlaceholder] = useState('')
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -17,15 +18,20 @@ export const SearchBar = ({ onEnter }) => {
   };
 
 
-  
+  const changePlaceholder = (value) => {
+    setPlaceholder(value)
+  }
+
   return (
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
       <input
-        placeholder="Type to search..."
+        placeholder={placeholder}
         value={input}
         onChange={(e) => handleChange(e.target.value)}
         onKeyPress={handleKeyPress}
+        onMouseEnter={() => changePlaceholder('Type to search...')}
+        onMouseLeave={() => changePlaceholder('')}
       />
     </div>
   );
