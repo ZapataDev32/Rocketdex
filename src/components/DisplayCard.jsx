@@ -1,14 +1,12 @@
 import React from "react";
 
 
-export const DisplayCard = () => {
+export const DisplayCard = ({searchResult}) => {
     
     return (
         <div className="blue-container">
+            {searchResult && <h1>{searchResult}</h1>}
             <img src='https://placehold.co/600x400' alt='placeholder'/>
-            <p>Description</p>
-            <p>Location</p>
-            <button>PikachUUUUUUUUU</button>
         </div>
     )
 }
