@@ -3,6 +3,10 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
+
+require('dotenv').config()
+const PORT = process.env.PORT
+
 //MIDDLEWARE
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -24,8 +28,8 @@ app.use('/api/encounters', encountersController)
 app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'dist', 'index.html')));
 
-app.listen(5555, () => {
-    console.log('Server is running! :D')
+app.listen(PORT, () => {
+    console.log(`Server is running on ${PORT} :D`)
 })
 
 // `Server is running at http://localhost:${process.env.PORT}`

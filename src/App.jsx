@@ -21,21 +21,7 @@ function App() {
               {/* Change below path name to match component */}
               <Route exact path="/locations" Component={Game}/>
             </Routes>
-               <div className="red-container left">
-                  <div className="search-bar-container">
-                    <SearchBar onEnter={handleSearch} />
-                  </div>
-                  <DisplayCard/>
-                  <LeftSideButton/>
-                  <DPadButtons/>
-               </div>
-               <div className="red-container right">
-                <InfoCard searchResult={searchResult}/>
-                <div className="search-bar-container">
-                  <SearchBar onEnter={handleSearch} />
-                  {searchResult && <h1>{searchResult}</h1>}
-                  <Game />
-                </div>
+               
                </div>
         </Router>
   );
