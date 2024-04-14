@@ -5,6 +5,7 @@ import { DisplayCard } from "./components/DisplayCard";
 import { DPadButtons } from "./components/DPadButtons";
 import { InfoCard } from "./components/InfoCard";
 import { LeftSideButton } from "./components/LeftSideButton";
+import Game from "./components/Game";
 
 function App() {
   const [searchResult, setSearchResult] = useState("");
@@ -48,6 +49,10 @@ function App() {
       </div>
       <div className="red-container right">
         <InfoCard searchResult={searchResult}/>
+      <div className="search-bar-container">
+        <SearchBar onEnter={handleSearch} />
+        {searchResult && <h1>{searchResult}</h1>}
+        <Game />
       </div>
     </div>
   );
