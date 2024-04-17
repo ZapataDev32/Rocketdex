@@ -6,23 +6,23 @@ RocketDex is not just another ordinary pokedex, its a revolutionary tool designe
 RocketDex leverages the power of modern web development technologies to bring you an immersive experience like never before. Utilizing React.js, we've crafted a sleek and responsive user interface that ensures seamless interaction across devices. Our backend is powered by PostgresSQL, providing a robust database solution, while SQL ensures efficient data management and retrieval.
 
 ### Main Software Tools
-1. Frontend Devlopment:
-   React: Librarys for building user interfaces.
-   Bootstrap: CSS Framework for responsive design.
-2. Backend Development:
-   Node.js: Jacascript runtime that allows server-side rendering.
-   Express: Web application framework for Node.js, helping build web servers.
-3. Databases:
-   MongoDB: A no SQL database that stores data in flexible, JSON-like format.
-   MongoDB Compass: A graphical user Interface (GUI) for MongoDB that allows visual representation of data in MongoDB databases.
-   MongoDB Atlas: A cloud-based database service for hosting the MongoDB databases.
-4. Cloud Services:
-   Amazon Web Services (AWS): A comprehensive cloud platform offering various services, such as cloud computing, storage, and databases.
-   Vercel: Platform for deploying and hosting the web application. Ease of use and seamless intergration with frontend frameworks like React.
-5. Collaboration and Planning:
-   Milanote: An online tool for organizing ideas, projects and team collaboration.
-External APIs:
-   PokeAPI: An API that provides dat about Poke'mon, which can be used to access information about different Poke'mon.
+#### 1. Frontend Devlopment:
+   #### React: Librarys for building user interfaces.
+   #### Bootstrap: CSS Framework for responsive design.
+#### 2. Backend Development:
+   #### Node.js: Jacascript runtime that allows server-side rendering.
+   #### Express: Web application framework for Node.js, helping build web servers.
+#### 3. Databases:
+   #### MongoDB: A no SQL database that stores data in flexible, JSON-like format.
+   #### MongoDB Compass: A graphical user Interface (GUI) for MongoDB that allows visual representation of data in MongoDB databases.
+   #### MongoDB Atlas: A cloud-based database service for hosting the MongoDB databases.
+#### 4. Cloud Services:
+   #### Amazon Web Services (AWS): A comprehensive cloud platform offering various services, such as cloud computing, storage, and databases.
+   #### Vercel: Platform for deploying and hosting the web application. Ease of use and seamless intergration with frontend frameworks like React.
+#### 5. Collaboration and Planning:
+   #### Milanote: An online tool for organizing ideas, projects and team collaboration.
+#### External APIs:
+   #### PokeAPI: An API that provides dat about Poke'mon, which can be used to access information about different Poke'mon.
 
 ## Embark on a Treacherous Journey
 As a memeber of Team Rocket, your mission is clear: steal Pokemon for the nefarious plans of your enigmatic leader, Giovanni. RocketDex is your indispensable tool in this grand scheme. Not only does it serve as a comprehensive Pokedex, displaying detailed information about each Pokemon, including their descriptions, typing, and even cries, but it also serves as your guide through the treacherous world of Pokemon theft. 
