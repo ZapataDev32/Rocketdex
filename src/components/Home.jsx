@@ -9,19 +9,19 @@ import { clearData, fetchData, incrementId, decrementId, inputId } from '../feat
 
 const Home = () => {
 
-  // LOADING SCREEN
-  const [loading, setLoading] = useState(false);
+  // // LOADING SCREEN
+  // const [loading, setLoading] = useState(false);
 
 
-  // Will trigger loading on first render of the page.
-  useEffect(() => {
-    setLoading(true)
-    // IF USING API, could use fetch here and when getting a response from the server would remove the loading.
-    // For testing/demonstration purposes, manually setting a load time using setTimeout.
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }, [])
+  // // Will trigger loading on first render of the page.
+  // useEffect(() => {
+  //   setLoading(true)
+  //   // IF USING API, could use fetch here and when getting a response from the server would remove the loading.
+  //   // For testing/demonstration purposes, manually setting a load time using setTimeout.
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 1000)
+  // }, [])
 
     const [searchResult, setSearchResult] = useState('');
 
