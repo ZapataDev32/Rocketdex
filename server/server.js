@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 })
 
 //LOCATIONS ROUTE
-const locationsController = require('./controllers/locations_controller.js')
-app.use('/api/locations', locationsController)
+const locationsController = require('./controllers/journey_controller.js')
+app.use('/api/journey', locationsController)
 
 //ENCOUNTERS ROUTE
 const encountersController = require('./controllers/encounters_controller.js')
@@ -31,5 +31,3 @@ app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'dist', 'index.h
 app.listen(PORT, () => {
     console.log(`Server is running on ${PORT} :D`)
 })
-
-// `Server is running at http://localhost:${process.env.PORT}`

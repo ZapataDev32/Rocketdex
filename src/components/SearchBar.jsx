@@ -10,7 +10,6 @@ export const SearchBar = ({ onEnter }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       onEnter(input);
-      console.log("wooo")
     }
   };
 

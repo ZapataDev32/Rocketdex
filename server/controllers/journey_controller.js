@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const Location = require('../models/Location.js')
 
-router.get('/api/locations', async (req, res) => {
+router.get('/api/journey', async (req, res) => {
     try {
         const foundLocations = await Location.find({})
         res.status(200).json(foundLocations)

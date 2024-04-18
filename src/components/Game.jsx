@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import './Game.css'
 
 const Game = () => {
   const [currentScene, setCurrentScene] = useState(0);

@@ -1,23 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchBar } from "./SearchBar";
 import { DisplayCard } from "./DisplayCard";
 import { LeftSideButton } from "./LeftSideButton";
 import { DPadButtons } from "./DPadButtons";
 import { InfoCard } from "./InfoCard";
-import  Game  from "./Game";
 import { useSelector, useDispatch, connect } from 'react-redux'
 import { clearData, fetchData, incrementId, decrementId, inputId } from '../features/dataSlice.js'
 
 const Home = () => {
+
+  // LOADING SCREEN
+  const [loading, setLoading] = useState(false);
+
+
+  // Will trigger loading on first render of the page.
+  useEffect(() => {
+    setLoading(true)
+    // IF USING API, could use fetch here and when getting a response from the server would remove the loading.
+    // For testing/demonstration purposes, manually setting a load time using setTimeout.
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, [])
+
     const [searchResult, setSearchResult] = useState('');
+
     const dispatch = useDispatch()
-  //   {
-  //     name: "",
-  //     id: "",
-  //     weight: "",
-  //     height: "",
-  //     imageUrl: ""
-  // }
 
     const handleSearch = (query) => {
       if (!query) {
@@ -44,15 +52,9 @@ const Home = () => {
           return response.json();
         })
         .then((data) => {
-          // Assuming you want to display the Pokemon's name
-          // setSearchResult({
-          //   name: data.name,
-          //   id: data.id,
-          //   weight: data.weight,
-          //   height: data.height,
-          //   imageUrl: (data.sprites.other.dream_world.front_default ? data.sprites.other.dream_world.front_default : data.sprites.front_default)
-          // });
+
           dispatch(inputId(data.id))
+
         })
         .catch((error) => {
           // Handle the case where the Pokemon is not found
@@ -69,19 +71,9 @@ const Home = () => {
 
     return (
         <div className="home-container">
-        
           <div id="red-container-left" className="red-container">
           <div className="search-bar-container">
           <SearchBar onEnter={handleSearch} />
-          {/* {searchResult.name && (
-            <div>
-              <h1>{searchResult.name}</h1>
-              <p>Entry Number: {searchResult.id}</p>
-              <img src={searchResult.imageUrl} alt={searchResult.name} ></img>
-              <p>Weight: {searchResult.weight}</p>
-              <p>Height: {searchResult.height}</p>
-              </div>
-          )} */}
           </div>
                   <DisplayCard searchResult={searchResult}/>
                   <LeftSideButton/>
@@ -89,7 +81,7 @@ const Home = () => {
                </div>
                <div id="red-container-right" className="red-container">
                 <InfoCard searchResult={searchResult}/>
-                  </div>
+              </div>
           </div>
     );
 }
