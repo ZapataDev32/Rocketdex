@@ -5,10 +5,12 @@ import { LeftSideButton } from "./LeftSideButton";
 import { DPadButtons } from "./DPadButtons";
 import { InfoCard } from "./InfoCard";
 import  Game  from "./Game";
+import { useSelector, useDispatch, connect } from 'react-redux'
+import { clearData, fetchData, incrementId, decrementId, inputId } from '../features/dataSlice.js'
 
 const Home = () => {
     const [searchResult, setSearchResult] = useState('');
-
+    const dispatch = useDispatch()
   //   {
   //     name: "",
   //     id: "",
@@ -26,6 +28,7 @@ const Home = () => {
             height: "",
             imageUrl: ""
         });
+        console.log("handlesearch line 29 homejsx")
         return;
       }
   
@@ -42,13 +45,14 @@ const Home = () => {
         })
         .then((data) => {
           // Assuming you want to display the Pokemon's name
-          setSearchResult({
-            name: data.name,
-            id: data.id,
-            weight: data.weight,
-            height: data.height,
-            imageUrl: data.sprites.other.dream_world.front_default
-          });
+          // setSearchResult({
+          //   name: data.name,
+          //   id: data.id,
+          //   weight: data.weight,
+          //   height: data.height,
+          //   imageUrl: (data.sprites.other.dream_world.front_default ? data.sprites.other.dream_world.front_default : data.sprites.front_default)
+          // });
+          dispatch(inputId(data.id))
         })
         .catch((error) => {
           // Handle the case where the Pokemon is not found
