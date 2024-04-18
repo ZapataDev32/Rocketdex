@@ -1,8 +1,11 @@
+/* body {
+  background-color: black;
+} */
 
-.App {
+.home-container {
   display: flex;
   height: 100vh;
-  max-width: 100vw;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -43,15 +46,19 @@
 .blue-container {
   /* display: flex; */
   margin: 0 auto;
-  background-color: white;
+  background-color: lightblue;
   border-radius: 10px 10px 10px 150px ;
-  width: 80%;
-  height: 55%;
+  width: 90%;
+  height: 513px;
   align-content: center;
   border: 4px black solid;
 }
 
-.blue-container img {
+.db-pokemon-img {
+  width: 60%;
+}
+
+.placeholder-img {
   height: 75%;
   width: 75%;
 }
@@ -60,6 +67,7 @@
   display: grid;
   grid: 50px 50px 50px / 50px 50px 50px;
   margin: 20px;
+  user-select: none;
   /* width: 10%;
   height: 10%; */
   align-self: flex-end;
@@ -110,32 +118,85 @@
 .left-side-button-container {
   /* background-color: brown; */
   display: flex;
+  user-select: none;
   margin: 0 90px;
   max-height: 100px;
   gap: 15px;
 }
+
 .select-button {
   margin-top: 15px;
   height: 65px;
   width: 65px;
   border-radius: 65px;
-  background-color: rgb(10, 10, 10);
-  box-shadow: 0px 1px 6px rgba(16, 16, 16, 0.671)
+  background-color: black;
+  box-shadow: 0px 2px 6px rgba(16, 16, 16, 0.822);
 }
+
+.select-button:active {
+  box-shadow: 0px 2px 3px rgba(16, 16, 16, 0.822);
+}
+
 .home-button, .menu-button {
   height: 25px;
   width: 90px;
   margin-top: 35px;
   border-radius: 10px;
-  outline: none;
-  box-shadow: 0px;
+  font-weight: bold;
 }
 
 .home-button{
   background: rgb(77, 77, 224);
-  outline: none;
+  border-color: rgb(0, 0, 0);
 }
 .menu-button {
   background: brown;
-  outline: none;
+  border-color: rgb(83, 10, 10);
+}
+
+/* styles for tablet devices */
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+   .home-container {
+      width: 95%;
+    }
+}
+
+/* styles for mobile devices */
+@media only screen and (max-width: 768px) {
+
+  body {
+    margin: 0;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: none;
+    border: none;
+  }
+
+  .blue-container {
+    margin: 0 auto;
+    width: 95%;
+    height: 600px;
+  }
+
+  .red-container {
+    border-radius: 0;
+    border: none;
+  }
+
+  #red-container-right {
+    display: none;
+  }
+
+  #red-container-left {
+    height: 100vh;
+  }
+  
+  .d-pad-container {
+    grid: 40px 40px 40px / 40px 40px 40px;
+  }
 }

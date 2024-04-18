@@ -14,7 +14,7 @@ export const SearchBar = ({ onEnter }) => {
   };
 
   const handleChange = (value) => {
-    setInput(value);
+      setInput(value);
   };
 
 
