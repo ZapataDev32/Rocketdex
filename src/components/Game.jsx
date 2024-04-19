@@ -1,8 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import './Game.css'
 
+
 const Game = () => {
+
+  // const mockLocations = [
+  //   {_id: 1, name: "Lorem Ipsum 1"},
+  //   {_id: 2, name: "Lorem Ipsum 2"},
+  //   {_id: 3, name: "Lorem Ipsum 3"}
+  // ]
+
+  const [locations, setLocations] = useState([])
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        const response = await fetch(`http://localhost:5555/api/journey`)
+        const data = await response.json()
+        setLocations(data)
+      } catch (error) {
+        console.log('Error fetching locations', error)
+      }
+    }
+    fetchLocations()
+  }, [])
+
+
   const [currentScene, setCurrentScene] = useState(0);
   const scenes = [
     {
@@ -33,6 +57,8 @@ const Game = () => {
     setCurrentScene(chosenPath.nextScene);
   };
 
+  console.log('Locations:', locations)
+
   return (
     <div>
       <Card
@@ -41,6 +67,19 @@ const Game = () => {
         choices={scenes[currentScene].choices}
         onChoose={makeChoice}
       />
+        {locations.map((location, index) => {
+          // console.log('Mapping locations:', location);
+          return (
+          <div>
+            <ul>
+          <li key={location._id}>{location.name}</li>
+            <ul>
+              <li key={location.name}>{location.type}</li>
+            </ul>
+            </ul>
+          </div>
+          )
+        })}
     </div>
   );
 };
