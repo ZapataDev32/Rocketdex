@@ -40,5 +40,5 @@ app.use(express.static(path.join('dist')));
 app.get('*', (req, res) => res.sendFile(path.resolve('dist', 'index.html')));
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT} :D`)
+    console.log(`Server is running on ${PORT} :O`)
 })
