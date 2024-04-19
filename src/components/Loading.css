@@ -1,0 +1,65 @@
+.pokeball-loading {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 1%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+  }
+  
+  .loading-text-div {
+    /* position: relative;
+    top: 50%; */
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .loading-text {
+    overflow: hidden;
+    /* position: relative; */
+    border-right: 4px solid black;
+    color: black;
+    white-space: nowrap;
+    /* top: 50%; */
+    font-size: 3rem;
+    font-family: "Pixelify Sans", sans-serif;
+    letter-spacing: .20rem;
+    margin: 0 auto;
+    animation: 
+      type 2.5s steps(15, end) 4,
+      blink .70s infinite;
+  }
+
+/* Pokeball JUMP animation keyframes */
+
+@keyframes jump {
+  from, to {top: 1%;}
+  50% {top: 0}
+}
+
+/* Loading text TYPE and BLINK animation keyframes */
+
+@keyframes type {
+  from {width: 0;}
+  to {width: 40%;}
+}
+
+@keyframes blink {
+  from, to {border-color: transparent;}
+  50% {border-color: black;}
+}
+
+@media only screen and (min-width: 451) and (max-width: 991px) {
+  @keyframes type {
+    from {width: 0;}
+    to {width: 40%;}
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  @keyframes type {
+    from {width: 0;}
+    to {width: 80%;}
+  }
+}

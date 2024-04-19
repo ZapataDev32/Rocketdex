@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
+const {Schema} = mongoose
 
-const locationSchema = new mongoose.Schema({
-    name: String,
-    type: String,
+const locationSchema = new Schema({
+    name: {type: String, required: true},
+    type: {type: String, required: true},
     encounters: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Encounter'
+        type: Schema.Types.ObjectId,
+        ref: 'Encounters'
     }]
-})
+}, {collection: 'Locations'})
 
 const Location = mongoose.model('Location', locationSchema)
 module.exports = Location

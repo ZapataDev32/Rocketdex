@@ -14,7 +14,7 @@ export const SearchBar = ({ onEnter }) => {
   };
 
   const handleChange = (value) => {
-    setInput(value);
+      setInput(value);
   };
 
 
@@ -24,7 +24,7 @@ export const SearchBar = ({ onEnter }) => {
 
   return (
     <div className="input-wrapper">
-      <FaSearch id="search-icon" />
+      <FaSearch onClick={()=>onEnter(input)} id="search-icon" />
       <input
         placeholder={placeholder}
         value={input}
