@@ -67,15 +67,15 @@ const Game = () => {
         choices={scenes[currentScene].choices}
         onChoose={makeChoice}
       />
-        {locations.map((location, index) => {
+        {locations.map((location) => {
           // console.log('Mapping locations:', location);
           return (
           <div>
             <ul>
-          <li key={location._id}>{location.name}</li>
-            <ul>
-              <li key={location.name}>{location.type}</li>
-            </ul>
+              <li key={location._id}>{location.name}</li>
+                <ul>
+                  <li key={location._id}>{location.type}</li>
+                </ul>
             </ul>
           </div>
           )
