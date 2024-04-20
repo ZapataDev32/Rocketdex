@@ -4,14 +4,19 @@ const Location = require('../models/Location.js')
 
 //Find all
 router.get('/', async (req, res) => {
-    console.log("Hello there")
     try {
-        const foundLocations = await Location.find()
+      
+        const locationType = req.query.type;
+
+        const query = locationType ? {type: locationType} : {};
+        
+        const foundLocations = await Location.find(query)
+        console.log('Found locations:', foundLocations)
 
         res.status(200).json(foundLocations)
 
     } catch (error) {
-        
+        console.log('Error fetching locations:', error)
         res.status(500).json({error: 'Failed to fetch locations'})
     }
 })
