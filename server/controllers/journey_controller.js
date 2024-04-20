@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    // console.log(req)
     console.log(req.body)
     console.log(JSON.stringify(req.body))
     try {
@@ -26,9 +25,6 @@ router.post('/', async (req, res) => {
         console.log(error)
         res.send(error)
     }
-
-    //stretch goal, 
-    // res.redirect('/api/journey')
 })
 
 router.put('/:id', async (req, res) => {
@@ -55,7 +51,6 @@ router.delete('/:id', async (req, res) => {
     if (!deletedLocation) {
         res.status(404).json({ message: 'Location not found'})
     }
-    res.status(303).redirect('/api/journey')
     res.status(200).json({ message: 'Location deleted succesfully'})
 
    } catch (error) {   
