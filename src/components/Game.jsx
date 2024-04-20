@@ -8,6 +8,7 @@ const Game = () => {
 
   const [locations, setLocations] = useState([]);
   const [locationType, setLocationType] = useState(null);
+  
 
   useEffect(() => {
     if (locationType) {
@@ -59,6 +60,33 @@ const Game = () => {
 
   console.log('Locations:', locations)
 
+  const deleteLocation = async (id) => {
+    try {
+    const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey/${id}`, {
+      method: 'DELETE'
+    });
+    if(!response.ok) throw new Error('Failed to delete location');
+    const updatedLocations = locations.filter(location => location._id !== id)
+    setLocations(updatedLocations);
+  } catch (error) {
+    console.error('Error deleting location:', error);
+  }
+}
+
+// const updateLocation = async (id) => {
+//   try {
+//     const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey/${id}`, {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//     });
+  
+//   } catch (error) {
+//     console.error('Error updating location:', error);
+//   }
+// }
+
   return (
     <div>
       <Card
@@ -67,22 +95,24 @@ const Game = () => {
         choices={scenes[currentScene].choices}
         onChoose={makeChoice}
       />
-      
-      <div className="location-map-container">
+
         {locations.map((location, index) => {
           // console.log('Mapping locations:', location);
           return (
-          
+            <div className="location-map-container">
             <ul key={location._id} className="location-map-item">
               <li>{location.name}</li>
                 <ul>
                   <li>{location.type}</li>
                 </ul>
             </ul>
-          
+              <button onClick={() => deleteLocation(location._id)}>DELETE</button>
+
+              {/* <button onClick={() => updateLocation(location._id)}>UPDATE</button> */}
+            </div>
           )
         })}
-      </div>
+
 
         <button onClick={() => setLocationType('Mountains')}>Mountains</button>
         <button onClick={() => setLocationType('Shorelines')}>Shorelines</button>
