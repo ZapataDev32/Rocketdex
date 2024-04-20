@@ -54,6 +54,7 @@ useEffect(() => {
 
               } 
               alt={data.apiData.name} 
+              className="image"
               />}
           </div>
         {/* )

@@ -10,6 +10,7 @@
   padding: 2rem;
   text-align: center;
   flex-direction: row;
+  overflow-y: auto / scroll / hidden
 }
 
 .red-container{
@@ -49,19 +50,24 @@
   background-color: lightblue;
   border-radius: 10px 10px 10px 150px ;
   width: 90%;
-  height: 513px;
+  max-height: 60%;
+  height: 60%;
   align-content: center;
   border: 4px black solid;
 }
 
-.db-pokemon-img {
-  width: 60%;
+.image{
+  object-fit: contain;
+  max-width: 45vh;
+  max-height: 45vh;
 }
 
-.placeholder-img {
+/* sizing ???? */
+
+/* .placeholder-img {
   height: 75%;
   width: 75%;
-}
+} */
 
 .d-pad-container {
   display: grid;
@@ -159,6 +165,11 @@
    .home-container {
       width: 95%;
     }
+    .image {
+      object-fit: contain;
+      max-width: 60%;
+      max-height: 60%;
+    }
 }
 
 /* styles for mobile devices */
@@ -186,6 +197,12 @@
   .red-container {
     border-radius: 0;
     border: none;
+  }
+
+  .image {
+    object-fit: contain;
+    max-width: 60%;
+    max-height: 60%;
   }
 
   #red-container-right {

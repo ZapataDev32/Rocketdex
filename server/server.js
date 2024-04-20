@@ -24,7 +24,6 @@ app.use(cors())
 // {origin: 'https://main.d337q9eogq0fbv.amplifyapp.com/'}
 
 
-
 //HOME ROUTE
 app.get('/', (req, res) => {
     res.json({mssg: 'Welcome to the backend server!'})

@@ -23,6 +23,9 @@ const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 // Enable CORS for all methods
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
@@ -107,8 +110,8 @@ mongoose.connect(ATLAS_URI).then(() => {
 const locationsController = require('./controllers/journey_controller.js')
 app.use('/api/journey', locationsController)
 
-const encountersController = require('./controllers/encounters_controller.js')
-app.use('/api/encounters', encountersController)
+// const encountersController = require('./controllers/encounters_controller.js')
+// app.use('/encounters', encountersController)
 
 app.get('/', (req, res) => {
   res.json({success: 'get call succeed!', url: req.url})
