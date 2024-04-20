@@ -5,18 +5,15 @@ import './Game.css'
 
 const Game = () => {
 
-  // const mockLocations = [
-  //   {_id: 1, name: "Lorem Ipsum 1"},
-  //   {_id: 2, name: "Lorem Ipsum 2"},
-  //   {_id: 3, name: "Lorem Ipsum 3"}
-  // ]
 
-  const [locations, setLocations] = useState([])
+  const [locations, setLocations] = useState([]);
+  const [locationType, setLocationType] = useState(null);
 
   useEffect(() => {
-    const fetchLocations = async (type) => {
+    if (locationType) {
+    const fetchLocations = async () => {
       try {
-        const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey?type=${type}`)
+        const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey?type=${locationType}`)
         //http://localhost:5555/api/journey
         const data = await response.json()
         setLocations(data)
@@ -26,7 +23,8 @@ const Game = () => {
       }
     }
     fetchLocations()
-  }, [])
+    }
+  }, [locationType])
 
 
   const [currentScene, setCurrentScene] = useState(0);
@@ -85,6 +83,13 @@ const Game = () => {
           )
         })}
       </div>
+
+        <button onClick={() => setLocationType('Mountains')}>Mountains</button>
+        <button onClick={() => setLocationType('Shorelines')}>Shorelines</button>
+        <button onClick={() => setLocationType('Forests')}>Forests</button>
+        <button onClick={() => setLocationType('Cities')}>Cities</button>
+
+        {console.log(locationType)}
 
     </div>
   );
