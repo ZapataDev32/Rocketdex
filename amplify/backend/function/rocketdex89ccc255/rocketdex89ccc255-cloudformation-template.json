@@ -18,6 +18,9 @@
     },
     "port": {
       "Type": "String"
+    },
+    "atlasUri": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -75,6 +78,9 @@
             },
             "PORT": {
               "Ref": "port"
+            },
+            "ATLAS_URI": {
+              "Ref": "atlasUri"
             }
           }
         },

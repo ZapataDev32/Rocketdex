@@ -24,6 +24,14 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_rocketdex89ccc255_atlasUri": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ]
+    },
     "AMPLIFY_function_rocketdex89ccc255_deploymentBucketName": {
       "usedBy": [
         {

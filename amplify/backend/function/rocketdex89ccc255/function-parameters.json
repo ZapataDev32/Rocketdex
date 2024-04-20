@@ -4,6 +4,10 @@
     {
       "cloudFormationParameterName": "port",
       "environmentVariableName": "PORT"
+    },
+    {
+      "cloudFormationParameterName": "atlasUri",
+      "environmentVariableName": "ATLAS_URI"
     }
   ]
 }
