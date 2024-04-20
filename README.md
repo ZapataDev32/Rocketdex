@@ -51,7 +51,9 @@ RocketDex isn't just a project; it's a testament to our dedication, creativity, 
 
 ## Known Bugs
 1. Not all buttons of the Pokedex application serve functionality in its current state.
-2. There is a lot of unused code, commented out, that needs cleaning. 
+2. There is a lot of unused code, commented out, that needs cleaning.
+3. When creating a location or updating a location, the changes display empty. Our UseEffect is the cuase of the bug, we need the page to re-render when the changes are made.
+4. Some display heights inside the Pokedex will cause unexpected UI sizing.  
 
 ## References 
 ### 1. Amazon Web Services(AWS) Documentation:
