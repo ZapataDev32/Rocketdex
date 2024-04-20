@@ -20,7 +20,8 @@ mongoose.connect(ATLAS_URI).then(() => {
 //MIDDLEWARE
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cors({origin: 'http://localhost:5173'}))
+app.use(cors())
+// {origin: 'http://localhost:5173'}
 
 //HOME ROUTE
 app.get('/', (req, res) => {
