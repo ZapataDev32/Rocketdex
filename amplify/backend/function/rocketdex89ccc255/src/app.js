@@ -65,47 +65,50 @@ mongoose.connect(ATLAS_URI).then(() => {
 * Example post method *
 ****************************/
 
-app.post('/api/journey', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
+// app.post('/api/journey', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'post call succeed!', url: req.url, body: req.body})
+// });
 
-app.post('/api/journey/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
+// app.post('/api/journey/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'post call succeed!', url: req.url, body: req.body})
+// });
 
 /****************************
 * Example put method *
 ****************************/
 
-app.put('/api/journey', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
+// app.put('/api/journey', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
+// });
 
-app.put('/api/journey/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
+// app.put('/api/journey/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
+// });
 
 /****************************
 * Example delete method *
 ****************************/
 
 
-app.delete('/api/journey', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
+// app.delete('/api/journey', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'delete call succeed!', url: req.url});
+// });
 
-app.delete('/api/journey/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
+// app.delete('/api/journey/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'delete call succeed!', url: req.url});
+// });
 
 const locationsController = require('./controllers/journey_controller.js')
 app.use('/api/journey', locationsController)
+
+const encountersController = require('./controllers/encounters_controller.js')
+app.use('/api/encounters', encountersController)
 
 app.get('/', (req, res) => {
   res.json({success: 'get call succeed!', url: req.url})
