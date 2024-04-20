@@ -17,8 +17,10 @@ const Game = () => {
     const fetchLocations = async () => {
       try {
         const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey`)
+        //http://localhost:5555/api/journey
         const data = await response.json()
         setLocations(data)
+        console.log(data)
       } catch (error) {
         console.log('Error fetching locations', error)
       }
@@ -67,19 +69,23 @@ const Game = () => {
         choices={scenes[currentScene].choices}
         onChoose={makeChoice}
       />
-        {locations.map((location) => {
+      
+      <div className="location-map-container">
+        {locations.map((location, index) => {
           // console.log('Mapping locations:', location);
           return (
-          <div>
-            <ul>
-              <li key={location._id}>{location.name}</li>
+          
+            <ul key={location._id} className="location-map-item">
+              <li>{location.name}</li>
                 <ul>
-                  <li key={location._id}>{location.type}</li>
+                  <li>{location.type}</li>
                 </ul>
             </ul>
-          </div>
+          
           )
         })}
+      </div>
+
     </div>
   );
 };

@@ -17,6 +17,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 
+
 // declare a new express app
 const app = express()
 app.use(bodyParser.json())
@@ -29,20 +30,36 @@ app.use(function(req, res, next) {
   next()
 });
 
+/*******************************************
+ * Here's our stuff UwU Go Team Rocket!    *
+ ******************************************/
+const mongoose = require('mongoose')
+require('dotenv').config()
+const PORT = process.env.PORT
+const ATLAS_URI = process.env.ATLAS_URI
+
+mongoose.connect(ATLAS_URI).then(() => {
+  console.log(`Connected to mongo: ` + ATLAS_URI)
+})
+.catch((err) => {
+  console.log(`Error connecting to mongo: ` + err)
+})
+
+
 
 /**********************
  * Example get method *
  **********************/
 
-app.get('/api/journey', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
+// app.get('/api/journey', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'get call succeed!', url: req.url});
+// });
 
-app.get('/api/journey/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
+// app.get('/api/journey/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'get call succeed!', url: req.url});
+// });
 
 /****************************
 * Example post method *
