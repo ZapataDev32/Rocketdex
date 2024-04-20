@@ -4,7 +4,12 @@ const Location = require('../models/Location.js')
 
 router.get('/', async (req, res) => {
     try {
-        const foundLocations = await Location.find()
+      
+        const locationType = req.query.type;
+
+        const query = locationType ? {type: locationType} : {};
+        
+        const foundLocations = await Location.find(query)
         console.log('Found locations:', foundLocations)
 
         res.status(200).json(foundLocations)

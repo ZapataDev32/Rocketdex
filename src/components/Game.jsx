@@ -14,9 +14,9 @@ const Game = () => {
   const [locations, setLocations] = useState([])
 
   useEffect(() => {
-    const fetchLocations = async () => {
+    const fetchLocations = async (type) => {
       try {
-        const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey`)
+        const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey?type=${type}`)
         //http://localhost:5555/api/journey
         const data = await response.json()
         setLocations(data)
