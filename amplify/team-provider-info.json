@@ -16,7 +16,7 @@
         "rocketdex89ccc255": {
           "port": "5555",
           "deploymentBucketName": "amplify-amplify45f4689e0c794-staging-e2462-deployment",
-          "s3Key": "amplify-builds/rocketdex89ccc255-44657147524462466946-build.zip"
+          "s3Key": "amplify-builds/rocketdex89ccc255-616d5251554237616d4a-build.zip"
         }
       },
       "api": {
