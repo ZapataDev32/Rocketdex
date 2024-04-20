@@ -31,6 +31,7 @@ RocketDex leverages the power of modern web development technologies to bring yo
 ### 5. Collaboration and Planning:
    #### Milanote: 
    An online tool for organizing ideas, projects and team collaboration.
+   To see our Project Plan: <a href="https://app.milanote.com/1RTba01eRgIR4g/milestone-2?p=eqhOSjEFhag">Click here</a>
    #### Postman:
    An API client for testing and collaborating on API's.
 ### External APIs:
