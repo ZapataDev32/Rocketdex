@@ -26,11 +26,14 @@ RocketDex leverages the power of modern web development technologies to bring yo
 ### 4. Cloud Services:
    #### Amazon Web Services (AWS): 
    A comprehensive cloud platform offering various services, such as cloud computing, storage, and databases.
-   #### Vercel: 
+   #### AWS Amplify: 
    Platform for deploying and hosting the web application. Ease of use and seamless intergration with frontend frameworks like React.
 ### 5. Collaboration and Planning:
    #### Milanote: 
    An online tool for organizing ideas, projects and team collaboration.
+   To see our Project Plan: <a href="https://app.milanote.com/1RTba01eRgIR4g/milestone-2?p=eqhOSjEFhag">Click here</a>
+   #### Postman:
+   An API client for testing and collaborating on API's.
 ### External APIs:
    #### PokeAPI: 
    An API that provides dat about Poke'mon, which can be used to access information about different Poke'mon.
@@ -45,4 +48,33 @@ But Rocketdex is more than just a tool - it's a game in itself. As you navigate 
 To ensure smooth progress and effective collaboration, we utilize Milanote, a versatile platform that allows us to organize our planning and notes seamlessly. With Milanote, we can brainstorm ideas, track milestones, and share resources effortlessly, empowering us to bring Rocketdex to life with precission and efficiency.
 
 RocketDex isn't just a project; it's a testament to our dedication, creativity, and ambition. Join us on this journey into the heart of Team Rocket's machinations, and let's rewrite the rules of the Pokemon world together. 
+
+## Known Bugs
+1. Not all buttons of the Pokedex application serve functionality in its current state.
+2. There is a lot of unused code, commented out, that needs cleaning. 
+
+## References 
+### 1. Amazon Web Services(AWS) Documentation:
+#### <a href="https://docs.aws.amazon.com/">AWS Documentation</a>
+
+### 2. D-Pad using CSS and HTML 
+#### <a href="https://stackoverflow.com/questions/76154649/d-pad-using-css-and-html">Stackoverflow</a>
+
+### 3. Animated Search Bar
+#### <a href="https://www.youtube.com/watch?v=PURKqbh6MfI">Video Tutorial</a>
+#### <a href="https://foolishdeveloper.com/animated-search-bar-using-only-html-and-css/">Web Tutorial</a>
+
+### 4. Loading Screen 
+#### <a href="https://www.youtube.com/watch?v=SR8755C0bME">Video Tutorial</a>
+
+## Honorable mentions
+### Rahmin
+### <a href="https://www.linkedin.com/in/rahmin-shoukoohi-155855235/">Rahmin's LinkedIn</a>
+### Mohammad
+### <a href="https://www.linkedin.com/in/bigmoemoney/">Mohammad LinkedIn</a>
+### ChatGPT
+### <a href="https://chat.openai.com/">Chat GPT Home</a>
+
+
+   
 
