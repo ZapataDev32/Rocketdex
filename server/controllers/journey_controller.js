@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
         if (!exisitingData) {
             return res.status(404).json({message: 'Location not found'})
         }
-       res.status(200).json({ message: 'Location updated successfully', Location: exisitingData}).redirect('/api/journey')
+       res.status(200).json({ message: 'Location updated successfully', Location: exisitingData})
     } catch (error) {
         console.error(error);
     }

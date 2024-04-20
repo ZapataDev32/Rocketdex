@@ -75,7 +75,7 @@
       "function": {
         "rocketdex89ccc255": {
           "deploymentBucketName": "amplify-rocketdex-db-a3f03-deployment",
-          "s3Key": "amplify-builds/rocketdex89ccc255-646d2f79347335654a64-build.zip",
+          "s3Key": "amplify-builds/rocketdex89ccc255-55304273386941487174-build.zip",
           "port": "5555",
           "atlasUri": "mongodb+srv://Meowth:puXrwZnJ2yyiseI5@rocketverse.0b8k0ps.mongodb.net/Rocketdex"
         }

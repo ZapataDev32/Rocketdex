@@ -5,17 +5,66 @@ import './Game.css'
 
 const Game = () => {
 
-
+  // EDITING (UPDATE)
   const [locations, setLocations] = useState([]);
   const [locationType, setLocationType] = useState(null);
+  //state and store locations and the currently edited location
+  const [editing, setEditing] = useState(null); //null if not editing
+  const [formData, setFormData] = useState({name: '', type: ''})
+  const [editFormData, setEditFormData] = useState({ name: '', type: ''})
   
+  const startEditing = (location) => {
+    setEditing(location._id);
+    setEditFormData({ name: location.name, type: location.type});
+  };
+
+  const handleEditFormChange = (event) => {
+    const {name, value } = event.target;
+    setEditFormData({ ...editFormData, [name]: value });
+  }
+
+  const saveUpdates = async (id) => {
+    try {
+      const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey/${id}`,
+      {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(editFormData)
+    });
+    if (!response.ok) throw new Error('Failed to updated location');
+    const updatedLocation = await response.json();
+    const updatedLocations = locations.map(location => 
+      location._id === id ? updatedLocation : location
+  );
+  console.log('Received Updated Location:', updatedLocation);
+  console.log('Old Locations:', locations);
+  console.log('New Locations:', updatedLocations);
+  
+
+
+  setLocations(updatedLocations);
+  setEditing(null);
+   } catch (error) {
+      console.error('Error updating location:', error);
+    }
+  }
+  
+  useEffect(() => {
+
+  }, [])
+
+  useEffect(() => {
+    console.log('Locations updated:', locations)
+  }, [locations])
 
   useEffect(() => {
     if (locationType) {
     const fetchLocations = async () => {
       try {
         const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey?type=${locationType}`)
-        //http://localhost:5555/api/journey
+        
         const data = await response.json()
         setLocations(data)
         console.log(data)
@@ -59,7 +108,8 @@ const Game = () => {
   };
 
   console.log('Locations:', locations)
-
+  
+// DELETE 
   const deleteLocation = async (id) => {
     try {
     const response = await fetch(`https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey/${id}`, {
@@ -70,6 +120,32 @@ const Game = () => {
     setLocations(updatedLocations);
   } catch (error) {
     console.error('Error deleting location:', error);
+  }
+}
+
+const handleInputChange = (event) => {
+  const {name, value} = event.target;
+  setFormData({...formData, [name]: value})
+}
+
+const handleSubmit = async (event) => {
+  event.preventDefault()
+  try {
+    const response = await fetch('https://ilv5baby57.execute-api.us-east-2.amazonaws.com/db/api/journey', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+    if(!response.ok) {
+      throw new Error('Failed to create location');
+    }
+    const newLocation = await response.json();
+    setLocations([...locations, newLocation]);
+    setFormData({name: '', type: ''})
+  } catch (error) {
+    console.error('Error creating location:', error);
   }
 }
 
@@ -96,19 +172,36 @@ const Game = () => {
         onChoose={makeChoice}
       />
 
-        {locations.map((location, index) => {
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Location Name" value={formData.name} onChange={handleInputChange}/>
+        <input type="text" name="type" placeholder="Location Type" value={formData.type} onChange={handleInputChange}/>
+        <button type="submit">Create Location</button>
+      </form>
+
+        {locations.map((location) => {
           // console.log('Mapping locations:', location);
           return (
-            <div className="location-map-container">
-            <ul key={location._id} className="location-map-item">
-              <li>{location.name}</li>
+            <div className="location-map-container" key={location._id}>
+              {editing === location._id ? (
+                <div>
+                  <input type='text' name='name' value={editFormData.name} onChange={handleEditFormChange}/>
+                  <input type='text' name='type' value={editFormData.type} onChange={handleEditFormChange}/>
+                  <button onClick={() => saveUpdates(location._id)}>Save</button>
+                  <button onClick={() => setEditing(null)}>Cancel</button>
+                </div>
+              ) : (
+                <div key={location._id}>
                 <ul>
-                  <li>{location.type}</li>
-                </ul>
-            </ul>
-              <button onClick={() => deleteLocation(location._id)}>DELETE</button>
+                <li>{location.name}</li>
+                  <ul>
+                    <li>{location.type}</li>
+                  </ul>
+              </ul>
+                <button onClick={() => deleteLocation(location._id)}>DELETE</button>
+                <button onClick={() => startEditing(location)}>EDIT</button>
+                </div>
+              )}
 
-              {/* <button onClick={() => updateLocation(location._id)}>UPDATE</button> */}
             </div>
           )
         })}
@@ -119,7 +212,7 @@ const Game = () => {
         <button onClick={() => setLocationType('Forests')}>Forests</button>
         <button onClick={() => setLocationType('Cities')}>Cities</button>
 
-        {console.log(locationType)}
+        {/* {console.log(locationType)} */}
 
     </div>
   );
