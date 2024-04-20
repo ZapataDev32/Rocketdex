@@ -61,13 +61,10 @@ router.put('/:id', async (req, res) => {
        res.status(200).json({ message: 'Location updated successfully', Location: exisitingData}).redirect('/api/journey')
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Internal server error'})
     }
-
-    
-  
     
 })
+
 //Delete delete route
 router.delete('/:id', async (req, res) => {
     try {
@@ -76,7 +73,6 @@ router.delete('/:id', async (req, res) => {
     if (!deletedLocation) {
         res.status(404).json({ message: 'Location not found'})
     }
-    res.status(303).redirect('/api/journey')
     res.status(200).json({ message: 'Location deleted succesfully'})
 
    } catch (error) {   
