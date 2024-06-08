@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/api/journey": {
+      "name": "/api/journey",
+      "lambdaFunction": "rocketdex89ccc255",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

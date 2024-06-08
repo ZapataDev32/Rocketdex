@@ -1,0 +1,60 @@
+{
+  "api": {
+    "backendapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "rocketdex89ccc255": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_rocketdex89ccc255_atlasUri": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ]
+    },
+    "AMPLIFY_function_rocketdex89ccc255_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ]
+    },
+    "AMPLIFY_function_rocketdex89ccc255_port": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ]
+    },
+    "AMPLIFY_function_rocketdex89ccc255_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketdex89ccc255"
+        }
+      ]
+    }
+  }
+}

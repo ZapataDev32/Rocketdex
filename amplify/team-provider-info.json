@@ -1,0 +1,88 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify45f4689e0c794-staging-e2462-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418268185:role/amplify-amplify45f4689e0c794-staging-e2462-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418268185:role/amplify-amplify45f4689e0c794-staging-e2462-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplify45f4689e0c794-staging-e2462-deployment",
+      "UnauthRoleName": "amplify-amplify45f4689e0c794-staging-e2462-unauthRole",
+      "StackName": "amplify-amplify45f4689e0c794-staging-e2462",
+      "StackId": "arn:aws:cloudformation:us-east-2:905418268185:stack/amplify-amplify45f4689e0c794-staging-e2462/3c367950-feb6-11ee-9e8b-0a345e74ea71",
+      "AmplifyAppId": "d337q9eogq0fbv"
+    },
+    "categories": {
+      "function": {
+        "rocketdex89ccc255": {
+          "port": "5555",
+          "deploymentBucketName": "amplify-amplify45f4689e0c794-staging-e2462-deployment",
+          "s3Key": "amplify-builds/rocketdex89ccc255-3050643667797a644d41-build.zip"
+        }
+      },
+      "api": {
+        "backendapi": {}
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rocketdex-dev-18e86-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-dev-18e86-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-dev-18e86-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-rocketdex-dev-18e86-deployment",
+      "UnauthRoleName": "amplify-rocketdex-dev-18e86-unauthRole",
+      "StackName": "amplify-rocketdex-dev-18e86",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:905418268185:stack/amplify-rocketdex-dev-18e86/0fccd520-feb2-11ee-84b9-02670bcc8339",
+      "AmplifyAppId": "d36eq4mh5f674w"
+    }
+  },
+  "iambase": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rocketdex-iambase-60bb6-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-iambase-60bb6-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-iambase-60bb6-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-rocketdex-iambase-60bb6-deployment",
+      "UnauthRoleName": "amplify-rocketdex-iambase-60bb6-unauthRole",
+      "StackName": "amplify-rocketdex-iambase-60bb6",
+      "StackId": "arn:aws:cloudformation:us-east-2:905418268185:stack/amplify-rocketdex-iambase-60bb6/543e3970-fed4-11ee-a587-06bbdb3f6845",
+      "AmplifyAppId": "d337q9eogq0fbv"
+    },
+    "categories": {
+      "function": {
+        "rocketdex89ccc255": {
+          "port": "5555",
+          "deploymentBucketName": "amplify-amplify45f4689e0c794-staging-e2462-deployment",
+          "s3Key": "amplify-builds/rocketdex89ccc255-3050643667797a644d41-build.zip"
+        }
+      }
+    }
+  },
+  "db": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rocketdex-db-a3f03-authRole",
+      "UnauthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-db-a3f03-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::905418268185:role/amplify-rocketdex-db-a3f03-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-rocketdex-db-a3f03-deployment",
+      "UnauthRoleName": "amplify-rocketdex-db-a3f03-unauthRole",
+      "StackName": "amplify-rocketdex-db-a3f03",
+      "StackId": "arn:aws:cloudformation:us-east-2:905418268185:stack/amplify-rocketdex-db-a3f03/bd5f4290-fed5-11ee-829c-02469f420285",
+      "AmplifyAppId": "d337q9eogq0fbv"
+    },
+    "categories": {
+      "function": {
+        "rocketdex89ccc255": {
+          "deploymentBucketName": "amplify-rocketdex-db-a3f03-deployment",
+          "s3Key": "amplify-builds/rocketdex89ccc255-55304273386941487174-build.zip",
+          "port": "5555",
+          "atlasUri": "mongodb+srv://Meowth:puXrwZnJ2yyiseI5@rocketverse.0b8k0ps.mongodb.net/Rocketdex"
+        }
+      },
+      "api": {
+        "backendapi": {}
+      }
+    }
+  }
+}
